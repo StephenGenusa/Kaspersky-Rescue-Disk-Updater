@@ -20,12 +20,12 @@ if errorlevel 1 goto :ERR
 echo Kaspersky Files Extracted in %~dp0kavrescue
 echo.
 echo.
-if exist "%ALLUSERSPROFILE%\Kaspersky Lab\AVP11\Bases\*.kdc" (
+if exist "%ALLUSERSPROFILE%\Application Data\Kaspersky Lab\AVP16.0.0\*.kdc" (
 echo Looks like you have a Kaspersky Product installed.
 echo Copying updates from your Local Kaspersky folder
 
-copy "%ALLUSERSPROFILE%\Kaspersky Lab\AVP11\Bases\*.kdc" .\kavrescue\rescue\bases\ /y > nul
-copy "%ALLUSERSPROFILE%\Kaspersky Lab\AVP11\Bases\Stat\kdb.stt" .\kavrescue\rescue\bases\stat\kdb.stt > nul
+copy "%ALLUSERSPROFILE%\Application Data\Kaspersky Lab\AVP16.0.0\Bases\*.kdc" .\kavrescue\rescue\bases\ /y > nul
+copy "%ALLUSERSPROFILE%\Application Data\Kaspersky Lab\AVP16.0.0\Bases\Stat\*.stt" .\kavrescue\rescue\bases\stat\*.stt > nul
 echo Copied Updates from your Local Kaspersky folder.
 echo Do you want to skip updating from the internet? y/n
 set /p choc=
@@ -59,7 +59,7 @@ title Copying the Updated Virus Definition Files to your Rescue Disk
 copy .\KLUpdater\Updates\bases\av\kdb\i386\*.* .\kavrescue\rescue\bases\ > nul
 copy .\KLUpdater\Updates\bases\av\emu\i386\*.* .\kavrescue\rescue\bases\ > nul
 copy .\KLUpdater\Updates\bases\av\kdb\i386\kdb-i386-0607g.xml .\kavrescue\rescue\bases\kdb-0607g.xml > nul
-copy /y .\KLUpdater\Updates\bases\av\kdb\i386\old\kdb.stt .\kavrescue\rescue\bases\stat\kdb.stt > nul
+copy /y .\KLUpdater\Updates\bases\av\kdb\i386\old\*.stt .\kavrescue\rescue\bases\stat\*.stt > nul
 copy .\KLUpdater\Updates\index\u0607g.xml .\kavrescue\rescue\bases\data\u0607g.xml > nul
 echo Successfully Copied Updated Definition Files to your Rescue Disk
 echo.
@@ -127,8 +127,3 @@ goto end
 :end
 pause
 goto :EOF
-
-
-
-
-
