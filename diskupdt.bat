@@ -20,7 +20,7 @@ if errorlevel 1 goto :ERR
 echo Kaspersky Files Extracted in %~dp0kavrescue
 echo.
 echo.
-if exist "%ALLUSERSPROFILE%\Application Data\Kaspersky Lab\AVP16.0.0\*.kdc" (
+if exist "%ALLUSERSPROFILE%\Application Data\Kaspersky Lab\AVP16.0.0\Bases\*.kdc" (
 echo Looks like you have a Kaspersky Product installed.
 echo Copying updates from your Local Kaspersky folder
 
